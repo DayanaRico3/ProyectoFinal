@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Password</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Cambiar Contraseña</h1>
+    <form method="POST" action="/cambiar_contrasena">
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="contrasena_actual">Contraseña Actual:</label>
+          <input type="password" class="form-control" id="contrasena_actual" name="contrasena_actual" required>
+        </div>
+        <div class="col-md-6">
+          <label for="nueva_contrasena">Contraseña Nueva:</label>
+          <input type="password" class="form-control" id="nueva_contrasena" name="nueva_contrasena" required>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary w-40 ">Change Password</button>
+      <a href="/perfil" class="btn btn-primary w-40 " >Cancelar</a>
+
+    </form>
+  </div>
+  <!-- Agrega esto al final de tu archivo cambiar_contrasena.html -->
+  <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="errorModalLabel">Error</h5>
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p id="mensaje-error" style="color:red;"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Obtén el mensaje de error del servidor
+    var errorMessage = "{{ error_message }}";
+
+    // Muestra el modal con el mensaje de error si existe
+    if (errorMessage) {
+      document.getElementById('mensaje-error').innerHTML = errorMessage;
+      $('#errorModal').modal('show');
+    }
+  </script>
+
+  <!-- Incluye los scripts de Bootstrap y jQuery al final del cuerpo del documento -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>

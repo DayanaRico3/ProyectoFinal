@@ -1,0 +1,6 @@
+id_mediciones,puntodemed,medicion,Indiceuv,fecha_tomada,usuario_id,id_lugar
+4,Udi,35.0,6,2023-10-09 11:16:49,4,1
+6,floresta,33.0,13,2023-10-11 13:11:16,4,4
+14,Cristo Petrolero,34.0,13,2023-09-13 11:50:00,4,5
+15,cancha la libertad,35.0,8,2023-08-31 16:50:01,31,4
+16,Aguas clara,39.0,10,2023-09-01 16:50:25,31,11

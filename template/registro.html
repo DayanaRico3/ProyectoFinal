@@ -1,0 +1,46 @@
+{% include("cabecera.html") %}
+<!-----FORMULARIO DE REGISTRO-->
+<div class="caja">
+    <form class="form-control" action="crear-registro" method="post">
+        <!---alertas-->
+        <h1 class="text-center t">Registro</h1>
+        {% if mensaje %}
+        <div class="alert alert-danger" role="alert">
+            {{ mensaje}}
+          </div>
+          {% endif %}
+          <form class="row g-3 needs-validation" novalidate>
+            <div class="col-12">
+              <label for="txtnombre" class="t text-center">Tu Nombre</label>
+              <input type="text" class="form-control" id="nombre" aria-describedby="txtnombre" placeholder="Ingrese su Nombre " name="txtnombre">
+              <small id="txtnombre" class="form-text text-muted"></small>
+            </div>
+
+  <div class="form-group ">
+    <label for="exampleInputEmail1 " class="t text-center">Correo</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su Correo " name="txtCorreo">
+    <small id="emailHelp" class="form-text text-muted"></small>
+  </div> <br>
+  <div class="form-group">
+    <label for="exampleInputPassword1 " class="t text-center">Contraseña</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su Contraseña" name="txtPassword">
+  </div>
+  <div class="form-check">
+
+  </div>
+   <!-- Agregar un campo para seleccionar el rol -->
+   <div class="form-group">
+    <label for="rol" class="t text-center">Rol</label>
+    <select class="form-control" id="rol" name="rol">
+        <option value="1">Administrador</option>
+        <option value="2">Usuario</option>
+    </select>
+</div>
+<br>
+  <div class="text-center">
+  <button type="submit" class="btn btn-success">Registrar</button>
+</div>
+</br>
+</form>
+
+<!-----FIN--------->

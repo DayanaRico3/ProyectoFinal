@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lugares y Mediciones</title>
+</head>
+<body>
+    <h1>Lugares</h1>
+    <ul>
+        {% for lugar in lugares %}
+            <li>
+                {{ lugar.nombre }} ({{ lugar.latitud }}, {{ lugar.longitud }})
+                <form method="post" action="{{ url_for('agregar_medicion', lugar_id=lugar.id) }}">
+                    <input type="text" name="indiceuv" placeholder="Índice UV">
+                    <input type="datetime-local" name="fecha_hora" placeholder="Fecha y hora">
+                    <input type="submit" value="Agregar Medición">
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
